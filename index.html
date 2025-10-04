@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>ISS Explorer — Optimized</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand"><div class="logo">ISS</div><div class="title">ISS Explorer</div></div>
+  <nav class="nav">
+    <a href="#cupola">Cupola</a>
+    <a href="#weight">Weightlessness</a>
+    <a href="#game">Game</a>
+    <a href="#benefits">Benefits</a>
+  </nav>
+</header>
+
+<main class="wrap">
+  <section class="hero">
+    <div>
+      <h1>ISS Explorer — Cupola, Microgravity & Reflex Test</h1>
+      <p>Drag/touch the Cupola panorama. Click inside weightless area to spawn floating objects. Play the Catch the Astronaut reflex test.</p>
+    </div>
+    <div class="hero-actions">
+      <button id="btnCupola">Go to Cupola</button>
+      <button id="btnGame">Play Game</button>
+    </div>
+  </section>
+
+  <!-- CUPOLA -->
+  <section id="cupola" class="panel">
+    <h2>🌌 Cupola — Panoramic Window</h2>
+    <p class="muted">Drag or swipe horizontally to pan. Hotspots appear when you look at specific panorama sections.</p>
+    <div id="panoramaWrap" class="panWrap" aria-label="Cupola viewer">
+      <div id="panorama" class="panorama" role="img" aria-hidden="false"></div>
+      <!-- hotspots (positioned programmatically) -->
+      <div class="hotspot" id="hp-earth"><div>🌍 Earth</div></div>
+      <div class="hotspot" id="hp-dock"><div>🚀 Docking</div></div>
+      <div class="hotspot" id="hp-arm"><div>🤖 Robotic Arm</div></div>
+    </div>
+    <div class="hint">Tip: drag horizontally (mouse or touch) — hotspots pop up when in view.</div>
+  </section>
+
+  <!-- WEIGHTLESS -->
+  <section id="weight" class="panel">
+    <h2>🪐 Weightlessness</h2>
+    <p class="muted">Tap / click to spawn floating objects. Drag objects to nudge them.</p>
+    <div id="weightArea" class="weightArea" aria-label="Weightless demo"></div>
+  </section>
+
+  <!-- BENEFITS -->
+  <section id="benefits" class="panel">
+    <h2>🌍 How ISS benefits Earth</h2>
+    <div class="cards">
+      <div class="card">
+        <h3>Medical Research</h3>
+        <p>Microgravity research informs treatments for bone/muscle loss and advances human health.</p>
+      </div>
+      <div class="card">
+        <h3>Earth Observation</h3>
+        <p>ISS imagery supports climate tracking, disaster response and ecosystem monitoring.</p>
+      </div>
+      <div class="card">
+        <h3>Robotics & Tech</h3>
+        <p>Robotics developed for space improves remote operations and technologies on Earth.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- GAME -->
+  <section id="game" class="panel">
+    <h2>🎯 Catch the Astronaut — Reflex Test</h2>
+    <p class="muted">Catch astronauts for points. 3 lives — missing reduces lives. Each catch reveals a name & fun fact.</p>
+
+    <div id="gameArea" class="gameArea" aria-label="Catch the Astronaut game"></div>
+
+    <div class="hud">
+      <div>Score: <span id="score">0</span></div>
+      <div>Caught: <span id="caught">0</span></div>
+      <div>Missed: <span id="missed">0</span></div>
+      <div>Lives: <span id="lives">❤❤❤</span></div>
+      <div>Time: <span id="timer">60</span>s</div>
+      <div>Difficulty:
+        <select id="difficulty">
+          <option value="1">Easy</option>
+          <option value="2" selected>Normal</option>
+          <option value="3">Hard</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="controls">
+      <button id="startBtn" class="btn">Start</button>
+      <button id="pauseBtn" class="btn btn-ghost">Pause</button>
+      <button id="resetBtn" class="btn btn-ghost">Reset</button>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <small>Made for Space Apps 2025 — include NASA references in your submission README.</small>
+  </footer>
+</main>
+
+<script src="script.js" defer></script>
+</body>
+</html>
